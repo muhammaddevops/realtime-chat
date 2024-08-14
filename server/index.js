@@ -27,12 +27,22 @@ io.on("connection", (socket) => {
 
   // socket.join we specify a value (a room id as a number for us), we create an event called join_room and we are listening then joining the room id sent from the frontend
   socket.on("join_room", (data) => {
-    socket.join(data);
+    socket.join(data.room);
+    console.log(
+      `User ${data.username} with ID: ${socket.id} joined room: ${data.room}`
+    );
   });
 
   socket.on("send_message", (data) => {
     // the "to" is specifying where to broadcast the message
     socket.to(data.room).emit("receive_message", data);
+    console.log(
+      `User: ${data.author} sent: ${data.message} in room: ${data.room}`
+    );
+  });
+
+  socket.on("disconnect", () => {
+    console.log(`User: ${socket.id} disconnected`);
   });
 });
 
