@@ -1,3 +1,4 @@
+import "./App.css";
 import React, { useState } from "react";
 import io from "socket.io-client";
 import {
@@ -29,7 +30,7 @@ function App() {
   };
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="md">
       <Box
         sx={{
           textAlign: "center",
@@ -42,8 +43,11 @@ function App() {
       >
         {!showChat ? (
           <Paper elevation={3} sx={{ padding: 5 }}>
-            <Typography variant="h3" sx={{ fontWeight: "bold", mb: 3 }}>
-              Live Chat
+            <Typography variant="h3" sx={{ fontWeight: "bold", mb: 1 }}>
+              💬 Chat Stream
+            </Typography>
+            <Typography variant="body1" sx={{ color: "grey", mb: 2 }}>
+              An instant message app that integrates with your business
             </Typography>
             <TextField
               label="Your name"
@@ -53,21 +57,21 @@ function App() {
               margin="normal"
             />
             <Typography variant="body1" sx={{ color: "grey", mt: 3 }}>
-              Join a public OR Create a private chat and share it others
+              Join a channel OR private chat
             </Typography>
             <FormControl fullWidth margin="normal">
-              <InputLabel>Select a public chat room</InputLabel>
+              <InputLabel>Choose a channel</InputLabel>
               <Select
+                label="Choose a channel"
                 value={room}
                 onChange={(e) => setRoom(e.target.value)}
-                label="Select a public chat room"
-                placeholder="Select a room"
               >
-                <MenuItem value={"Gaming"}>Gaming</MenuItem>
-                <MenuItem value={"Tech"}>Tech</MenuItem>
+                <MenuItem value={"Healthcare"}>Healthcare</MenuItem>
+                <MenuItem value={"Tradesman"}>Tradesman</MenuItem>
+                <MenuItem value={"E-commerce"}>E-commerce</MenuItem>
+                <MenuItem value={"Internal team"}>Internal team</MenuItem>
                 <MenuItem value={"Real estate"}>Real estate</MenuItem>
-                <MenuItem value={"Social media"}>Social media</MenuItem>
-                <MenuItem value={"Fitness"}>Fitness</MenuItem>
+                <MenuItem value={"Personal trainer"}>Personal trainer</MenuItem>
               </Select>
             </FormControl>
 
