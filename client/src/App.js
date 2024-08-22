@@ -66,12 +66,15 @@ function App() {
                 value={room}
                 onChange={(e) => setRoom(e.target.value)}
               >
-                <MenuItem value={"Healthcare"}>Healthcare</MenuItem>
-                <MenuItem value={"Tradesman"}>Tradesman</MenuItem>
-                <MenuItem value={"E-commerce"}>E-commerce</MenuItem>
+                <MenuItem value={"Clinic patients"}>Clinic patients</MenuItem>
+                <MenuItem value={"E-commerce customers"}>
+                  E-commerce customers
+                </MenuItem>
                 <MenuItem value={"Internal team"}>Internal team</MenuItem>
-                <MenuItem value={"Real estate"}>Real estate</MenuItem>
-                <MenuItem value={"Personal trainer"}>Personal trainer</MenuItem>
+                <MenuItem value={"Property viewers"}>Property viewers</MenuItem>
+                <MenuItem value={"Personal trainer class"}>
+                  Personal trainer class
+                </MenuItem>
               </Select>
             </FormControl>
 
